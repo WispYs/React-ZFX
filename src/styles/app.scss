@@ -747,13 +747,23 @@
             width:100%;
             height:calc(100% - 106px);
             background:white;
+            overflow:auto;
             .indexSearch_searchList{
+                ul{
+                    height:100%;
+                }
                 li{
                     color: #333333;
                     padding: 15px 34px;
                     line-height: 26px;
                     border-bottom: 1px solid #EDEBEB;
                 }
+            }
+            .indexSearch_nomore{
+                margin: 10px 0;
+                text-align: center;
+                color: #999;
+                font-size: 14px;
             }
             .noSearch{
                 margin: 50px auto;
