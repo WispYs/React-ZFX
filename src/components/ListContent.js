@@ -194,7 +194,7 @@ module.exports = React.createClass({
                     <ul>
                         {
                           tabs.map(function(item,index){
-                            return <li key={index} onClick={this.handleClick.bind(this,index)} className={this.state.addClassIndex == index ? 'cur' : ''}>{item}</li>
+                            return <li key={index} onClick={this.handleClick.bind(this,index)} className={this.state.addClassIndex == index ? 'cur_bg' : ''}>{item}</li>
                           },this)
                         }
                     </ul>

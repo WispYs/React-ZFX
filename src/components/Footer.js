@@ -29,7 +29,7 @@ module.exports = React.createClass({
                 <ul>
                   {
                     lists.map(function(item,index){
-                      return <li key={index} onClick={this.footerClick.bind(this,index)} ><a className={this.state.selectIndex == index ? 'foot_cur' : ''} href={item.url}>{item.name}</a></li>
+                      return <li key={index} onClick={this.footerClick.bind(this,index)} ><a className={this.state.selectIndex == index ? 'cur' : ''} href={item.url}>{item.name}</a></li>
                     },this)
                   }
                 </ul>

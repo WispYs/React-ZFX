@@ -8,7 +8,9 @@ module.exports = React.createClass({
             typeIndex: 0,
             firstIndex: 0,
             secondIndex: 0,
-            thirdIndex: 0
+            thirdIndex: 0,
+            typeList : ['区域', '租金', '户型', '更多'],
+            contentShow: true
         }
     },
     backFunction: function() {
@@ -17,35 +19,49 @@ module.exports = React.createClass({
     changeType: function(index) {
         console.log(index)
         this.setState({
-            typeIndex: index
+            typeIndex: index,
+            firstIndex: 0,
+            secondIndex: 0,
+            thirdIndex: 0,
+            contentShow: true
         })
     },
     changeFirst: function(index) {
-        console.log(index)
         this.setState({
             firstIndex: index,
             secondIndex: 0,
             thirdIndex: 0
         })
+        /*console.log("%c ", "background: url(https://raw.githubusercontent.com/WispYs/React-ZFX/master/src/images/huaji.png) no-repeat center;padding-left:120px;padding-bottom: 200px;")*/
     },
     changeSecond: function(index) {
-        console.log(index)
         this.setState({
-            secondIndex: index
+            secondIndex: index,
+            thirdIndex: 0
         })
     },
-    changeThird: function(index) {
-        console.log(index)
-        this.setState({
+    changeThird: function(index,e) {
+        console.log(this.state)
+        console.log(e.target.innerHTML,index,this.state.typeIndex)
+        var checkedValue = e.target.innerHTML;
+        this.setState({ 
             thirdIndex: index
         })
+        var that = this;
         layer.open({
             type: 2,
-            time: 2
+            time: 2,
+            end: function(){
+                that.state.typeList.splice(that.state.typeIndex,1,checkedValue)
+                console.log(that.state.firstIndex)
+                that.setState({
+                    typeList: that.state.typeList,
+                    contentShow: false
+                })
+            }
         });
     },
     render: function() {
-        let typeList = ['区域', '租金', '户型', '更多'];
         let firstList = ["区域", "地铁", "附近"];
         let secondList = [
                 ["不限", "浦东", "黄浦", "静安", "徐汇", "长宁", "虹口", "杨浦", "闸北", "普陀", "宝山", "闵行", "嘉定", "松江", "青浦", "奉贤", "金山", "崇明"],
@@ -130,7 +146,7 @@ module.exports = React.createClass({
                         <ul className="areaSearch_ul_3">
                             {
                                thirdList[this.state.firstIndex][this.state.secondIndex].map(function(item,index){
-                                    return <li key={index} onClick={this.changeThird.bind(this,index)}>{item}</li>
+                                    return <li key={index} onClick={this.changeThird.bind(this,index)} className={this.state.thirdIndex == index ? 'cur' : ''}>{item}</li>
                                 },this) 
                             }
                         </ul>
@@ -142,7 +158,7 @@ module.exports = React.createClass({
                     <ul>
                         {
                            huxingList.map(function(item,index){
-                                return <li key={index} onClick={this.changeThird.bind(this,index)}>{item}</li>
+                                return <li key={index} onClick={this.changeThird.bind(this,index)} className={this.state.thirdIndex == index ? 'cur' : ''}>{item}</li>
                             },this) 
                         }
                     </ul>
@@ -153,7 +169,7 @@ module.exports = React.createClass({
                     <ul>
                         {
                            priceList.map(function(item,index){
-                                return <li key={index} onClick={this.changeThird.bind(this,index)}>{item}</li>
+                                return <li key={index} onClick={this.changeThird.bind(this,index)} className={this.state.thirdIndex == index ? 'cur' : ''}>{item}</li>
                             },this) 
                         }
                     </ul>
@@ -173,13 +189,22 @@ module.exports = React.createClass({
                 <div className="areaSearch_type">
                     <ul>
                         {
-                            typeList.map(function(item,index){
-                                return <li key={index} className={this.state.typeIndex == index ? 'cur' : ''} onClick={this.changeType.bind(this,index)}>{item}</li>
+                            this.state.typeList.map(function(item,index){
+                                return <li key={index} className={this.state.typeIndex == index ? 'cur' : ''} onClick={this.changeType.bind(this,index)}><span>{item}<em></em></span></li>
                             },this)
                         }
                     </ul>
                 </div>
-                {typeContent}
+                <div className={this.state.contentShow ? '' : 'hideStyle'}>
+                    {typeContent}
+                </div>
+                <div className={this.state.contentShow ? 'hideStyle' : ''}>
+                    <div className="areaSearch_typeContentNull">
+                        <img src="../src/images/yxd_nolist.png" />
+                        <p>没有数据</p>
+                    </div>
+                </div>
+                
             </div>
         );
     }
