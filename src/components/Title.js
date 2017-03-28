@@ -11,7 +11,6 @@ module.exports = React.createClass({
                 <Banner/>
                 <Type/>
             </div>
-            
         )
     }
 })
