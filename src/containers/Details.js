@@ -1,8 +1,8 @@
 'use strict';
 
 import React from 'react';
-var Title = require('../components/Title');
 var ListDetails = require('../components/ListDetails');
+var Title = require('../components/Title');
 var $ = require('jquery');
 module.exports = React.createClass({
     getInitialState: function() {
@@ -108,9 +108,6 @@ module.exports = React.createClass({
         map.addControl(new BMap.GeolocationControl());
 
     },
-    backFunction: function() {
-        window.history.go(-1);
-    },
     handleFocus: function() {
         this.setState({
             showFocus: !this.state.showFocus
@@ -136,10 +133,7 @@ module.exports = React.createClass({
         }
         return (
             <div className="details">
-                <div className="details_title" >
-                    <span onClick={this.backFunction}></span>
-                    <h2>{this.state.productList.name}</h2>
-                </div>
+                <Title content={this.state.productList.name}/>
                 <div className="detail_content">
                     <img src={this.state.productList.image}/>
                     <div className="detail_content_title">

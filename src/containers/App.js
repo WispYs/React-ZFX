@@ -15,6 +15,7 @@ var Person = require('./Person');
 var Details = require('./Details');
 var AreaSearch = require('./AreaSearch');
 var IndexSearch = require('./IndexSearch');
+var Activity = require('./Activity');
 var Footer = require('../components/Footer');
 
 
@@ -28,6 +29,7 @@ ReactDom.render((
             <Route path='/details' component={Details} />
             <Route path='/areaSearch' component={AreaSearch} />
             <Route path='/indexSearch' component={IndexSearch} />
+            <Route path='/activity' component={Activity} />
         </Router>
     </div>
 ), document.getElementById('app'));
