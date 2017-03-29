@@ -3,6 +3,7 @@
 import React from 'react';
 var $ = require('jquery');
 var Footer = require('../components/Footer');
+var Global = require('../vendor/global.js');
 var SearchList = React.createClass({
     render:function(){
         return (
@@ -33,7 +34,7 @@ module.exports = React.createClass({
         var keywords = e.target.value;
         if(keywords){
             $.post(
-                "https://wxapi.zfx365.com/api/housevillage/DistrictVillage",{ pageindex : 1 ,pagesize : 20, keywords : keywords},
+                Global.apiUrl + "api/housevillage/DistrictVillage",{ pageindex : 1 ,pagesize : 20, keywords : keywords},
                 function(data){
                     $.each(data.data.items, function(index, val) {
                         var regex = new RegExp(keywords, 'g')
