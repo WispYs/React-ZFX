@@ -1,10 +1,10 @@
 'use strict';
 
 import React from 'react';
-var Footer = require('../components/Footer');
-var PublicDate = require('../vendor/publicdate.js');
-module.exports = React.createClass({
-    render: function(){
+import {Footer} from '../components/Footer';
+let PublicDate = require('../vendor/publicdate.js');
+export class Person extends React.Component {
+    render() { 
         return (
             <div className="person">
                 <div className="person_title">
@@ -48,4 +48,4 @@ module.exports = React.createClass({
             </div>
         );
     }
-})
+}

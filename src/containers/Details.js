@@ -1,18 +1,24 @@
 'use strict';
 
 import React from 'react';
-var ListDetails = require('../components/ListDetails');
-var Title = require('../components/Title');
+import {ListDetails} from '../components/ListDetails';
+import {Title} from '../components/Title';
 var PublicDate = require('../vendor/publicdate.js');
 var $ = require('jquery');
-module.exports = React.createClass({
-    getInitialState: function() {
-        return {
+export class Details extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             showFocus: false,
             productList: JSON.parse(window.sessionStorage.getItem('productList')) || ''
         }
-    },
-    componentDidMount: function() {
+        this.handleFocus = () => {
+            this.setState({
+                showFocus: !this.state.showFocus
+            })
+        }
+    }
+    componentDidMount() {
         console.log(Number(this.state.productList.location.lng), Number(this.state.productList.location.lat))
         var map = new BMap.Map("container"); // 创建地图实例  
         var point = new BMap.Point(Number(this.state.productList.location.lng), Number(this.state.productList.location.lat));
@@ -20,14 +26,9 @@ module.exports = React.createClass({
         map.addControl(new BMap.NavigationControl());
         map.addControl(new BMap.GeolocationControl());
 
-    },
-    handleFocus: function() {
-        this.setState({
-            showFocus: !this.state.showFocus
-        })
-    },
-    render: function() {
-        var focusList;
+    }
+    render() {
+        let focusList;
         if (this.state.showFocus) {
             focusList =
                 <div className="detail_focus_list">
@@ -120,5 +121,5 @@ module.exports = React.createClass({
                 </div>
             </div>
         );
-    }
-})
+        }
+}

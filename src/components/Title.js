@@ -2,11 +2,14 @@
 
 import React from 'react';
 
-module.exports = React.createClass({
-    backFunction: function() {
-        window.history.go(-1);
-    },
-    render: function() {
+export class Title extends React.Component {
+    constructor(props) {
+        super(props);
+        this.backFunction = () => {
+            window.history.go(-1);
+        }
+    }
+    render() {
         return (
             <div className="title" >
                 <span onClick={this.backFunction}></span>
@@ -14,4 +17,4 @@ module.exports = React.createClass({
             </div>
         )
     }
-})
+}

@@ -1,11 +1,12 @@
 'use strict';
 
 import React from 'react';
-var Footer = require('../components/Footer');
+import {Footer} from '../components/Footer';
 var PublicDate = require('../vendor/publicdate.js');
-module.exports = React.createClass({
-    getInitialState: function() {
-        return {
+export class AreaSearch extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             typeIndex: 0,
             firstIndex: 0,
             secondIndex: 0,
@@ -13,56 +14,56 @@ module.exports = React.createClass({
             typeList : ['区域', '租金', '户型', '更多'],
             contentShow: true
         }
-    },
-    backFunction: function() {
-        window.history.go(-1);
-    },
-    changeType: function(index) {
-        console.log(index)
-        this.setState({
-            typeIndex: index,
-            firstIndex: 0,
-            secondIndex: 0,
-            thirdIndex: 0,
-            contentShow: true
-        })
-    },
-    changeFirst: function(index) {
-        this.setState({
-            firstIndex: index,
-            secondIndex: 0,
-            thirdIndex: 0
-        })
-        /*console.log("%c ", "background: url(https://raw.githubusercontent.com/WispYs/React-ZFX/master/src/images/huaji.png) no-repeat center;padding-left:120px;padding-bottom: 200px;")*/
-    },
-    changeSecond: function(index) {
-        this.setState({
-            secondIndex: index,
-            thirdIndex: 0
-        })
-    },
-    changeThird: function(index,e) {
-        console.log(this.state)
-        console.log(e.target.innerHTML,index,this.state.typeIndex)
-        var checkedValue = e.target.innerHTML;
-        this.setState({ 
-            thirdIndex: index
-        })
-        var that = this;
-        layer.open({
-            type: 2,
-            time: 2,
-            end: function(){
-                that.state.typeList.splice(that.state.typeIndex,1,checkedValue)
-                console.log(that.state.firstIndex)
-                that.setState({
-                    typeList: that.state.typeList,
-                    contentShow: false
-                })
-            }
-        });
-    },
-    render: function() {
+        this.backFunction = () => {
+            window.history.go(-1);
+        }
+        this.changeType = (index) => {
+            console.log(index)
+            this.setState({
+                typeIndex: index,
+                firstIndex: 0,
+                secondIndex: 0,
+                thirdIndex: 0,
+                contentShow: true
+            })
+        }
+        this.changeFirst = (index) => {
+            this.setState({
+                firstIndex: index,
+                secondIndex: 0,
+                thirdIndex: 0
+            })
+            /*console.log("%c ", "background: url(https://raw.githubusercontent.com/WispYs/React-ZFX/master/src/images/huaji.png) no-repeat center;padding-left:120px;padding-bottom: 200px;")*/
+        }
+        this.changeSecond = (index) => {
+            this.setState({
+                secondIndex: index,
+                thirdIndex: 0
+            })
+        }
+        this.changeThird = (index,e) => {
+            console.log(this.state)
+            console.log(e.target.innerHTML,index,this.state.typeIndex)
+            var checkedValue = e.target.innerHTML;
+            this.setState({ 
+                thirdIndex: index
+            })
+            var that = this;
+            layer.open({
+                type: 2,
+                time: 2,
+                end: function(){
+                    that.state.typeList.splice(that.state.typeIndex,1,checkedValue)
+                    console.log(that.state.firstIndex)
+                    that.setState({
+                        typeList: that.state.typeList,
+                        contentShow: false
+                    })
+                }
+            })
+        }
+    }
+    render() {
         let typeContent;
         if (this.state.typeIndex == 0) {
             typeContent =
@@ -151,4 +152,4 @@ module.exports = React.createClass({
             </div>
         );
     }
-})
+}

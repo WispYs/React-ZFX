@@ -5,24 +5,24 @@ import {
   Router, Route, Link, Lifecycle 
 }
 from 'react-router';
-module.exports = React.createClass({
- 
-  listsClick: function(index) {
-    let that = this;
-    layer.open({
-        type: 2,
-        time: 2,
-        end: function(){
-          console.log("end")
-          window.sessionStorage.setItem('productList', JSON.stringify(that.props.lists[index]));
-          window.location.reload(); //React 跳转当前路由不刷新页面  采用强制刷新
-          window.scrollTo(0, 0); //React Router不维护scroll position 
-        }
-    });
-
-    
-  },
-  render: function() {
+export class ListDetails extends React.Component {
+  constructor(props) {
+    super(props);
+    this.listsClick = (index) => {
+      let that = this;
+      layer.open({
+          type: 2,
+          time: 2,
+          end: function(){
+            console.log("end")
+            window.sessionStorage.setItem('productList', JSON.stringify(that.props.lists[index]));
+            window.location.reload(); //React 跳转当前路由不刷新页面  采用强制刷新
+            window.scrollTo(0, 0); //React Router不维护scroll position 
+          }
+      });
+    }
+  }
+  render() {
     return (
       <div className="listDetails">
           {   
@@ -78,4 +78,4 @@ module.exports = React.createClass({
       </div>
     )
   }
-})
+}

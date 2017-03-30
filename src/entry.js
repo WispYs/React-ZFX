@@ -7,4 +7,3 @@ import './vendor/need/layer.css';
 //引入组件
 import './containers/App.js';
 import './vendor/layer.js';
-var PublicDate = require('./vendor/publicdate.js');

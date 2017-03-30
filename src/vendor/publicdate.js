@@ -36,7 +36,8 @@ PublicDate.Index_typeLists = [
             }
         ];
 //listContent
-PublicDate.listContent_left = [{
+PublicDate.listContent_left = [
+      {
         name: '建华小区3居室-南卧',
         location: {
           lat: "31.2160550000",

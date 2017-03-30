@@ -1,19 +1,20 @@
 'use strict';
 
 import React from 'react';
-module.exports = React.createClass({
-  getInitialState: function() {
-    return {
+export class Footer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       selectIndex: window.sessionStorage.getItem('footerIndex') || 0
     }
-  },
-  footerClick: function(index) {
-    this.setState({
-      selectIndex: index
-    });
-    window.sessionStorage.setItem('footerIndex', index);
-  },
-  render: function() {
+    this.footerClick = (index) => {
+      this.setState({
+        selectIndex: index
+      });
+      window.sessionStorage.setItem('footerIndex', index);
+    }
+  }
+  render() {
     let lists = [{
       name: '首页',
       url: '#/'
@@ -26,15 +27,16 @@ module.exports = React.createClass({
     }]
     return (
       <div className="footer">
-                <ul>
-                  {
-                    lists.map(function(item,index){
-                      return <li key={index} onClick={this.footerClick.bind(this,index)} ><a className={this.state.selectIndex == index ? 'cur' : ''} href={item.url}>{item.name}</a></li>
-                    },this)
-                  }
-                </ul>
-            </div>
+          <ul>
+            {
+              lists.map(function(item,index){
+                return <li key={index} onClick={this.footerClick.bind(this,index)} ><a className={this.state.selectIndex == index ? 'cur' : ''} href={item.url}>{item.name}</a></li>
+              },this)
+            }
+          </ul>
+      </div>
 
     )
   }
-})
+  
+}
