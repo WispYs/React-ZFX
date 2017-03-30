@@ -3,100 +3,13 @@
 import React from 'react';
 var ListDetails = require('../components/ListDetails');
 var Title = require('../components/Title');
+var PublicDate = require('../vendor/publicdate.js');
 var $ = require('jquery');
 module.exports = React.createClass({
     getInitialState: function() {
         return {
             showFocus: false,
-            productList: JSON.parse(window.sessionStorage.getItem('productList')) || '',
-            focusList: [{
-                time: '2017-01-13',
-                name: '张亿航'
-            }, {
-                time: '2017-01-15',
-                name: '李伟利'
-            }, {
-                time: '2017-01-16',
-                name: '黄昊'
-            }],
-            setting: [{
-                img: '../src/images/index_icon1.png',
-                name: '床'
-            }, {
-                img: '../src/images/index_icon2.png',
-                name: '衣柜'
-            }, {
-                img: '../src/images/index_icon3.png',
-                name: '电视'
-            }, {
-                img: '../src/images/index_icon4.png',
-                name: '冰箱'
-            }, {
-                img: '../src/images/index_icon5.png',
-                name: '卫生间'
-            }],
-            moreLists: [{
-                name: '御景豪园1居室-南卧',
-                location: {
-                    lat: "31.1982850000",
-                    lng: "121.6898340000"
-                },
-                length: '200m',
-                area: '12㎡',
-                floor: '14/23层',
-                price: '￥1390',
-                type: [{
-                    name: '精装房',
-                    className: 'list_color1'
-                }, {
-                    name: '地铁房',
-                    className: 'list_color2'
-                }, ],
-                address: '距离2号线川沙站600米',
-                image: '../src/images/ad4.png'
-            }, {
-                name: '东方悦居苑1居室-北卧',
-                location: {
-                    lat: "31.1701590000",
-                    lng: "121.5118080000"
-                },
-                length: '600m',
-                area: '23㎡',
-                floor: '02/11层',
-                price: '￥3490',
-                type: [{
-                    name: '地铁房',
-                    className: 'list_color2'
-                }, {
-                    name: '随时看',
-                    className: 'list_color3'
-                }],
-                address: '距离6号线三林站500米',
-                image: '../src/images/ad5.png'
-            }, {
-                name: '建华小区3居室-南卧',
-                location: {
-                    lat: "31.2160550000",
-                    lng: "121.5563400000"
-                },
-                length: '500m',
-                area: '16㎡',
-                floor: '08/14层',
-                price: '￥7190',
-                type: [{
-                    name: '精装房',
-                    className: 'list_color1'
-                }, {
-                    name: '地铁房',
-                    className: 'list_color2'
-                }, {
-                    name: '随时看',
-                    className: 'list_color3'
-                }],
-                address: '距离2号线世纪公园站150米',
-                image: '../src/images/ad1.png'
-            }]
-
+            productList: JSON.parse(window.sessionStorage.getItem('productList')) || ''
         }
     },
     componentDidMount: function() {
@@ -120,7 +33,7 @@ module.exports = React.createClass({
                 <div className="detail_focus_list">
                     <ul>
                         {
-                            this.state.focusList.map(function(item,index){
+                            PublicDate.Details_focusList.map(function(item,index){
                                 return <li key={index}>
                                             <span>{item.time}</span>
                                             <em>{item.name}</em>
@@ -164,7 +77,7 @@ module.exports = React.createClass({
                 <div className="detail_focus">
                     <div className="detail_focus_tit" onClick={this.handleFocus}>
                         <h3>房源记录（今天刷新）</h3>
-                        <p>最近有<em>{this.state.focusList.length}</em>人加入意向房</p>
+                        <p>最近有<em>{PublicDate.Details_focusList.length}</em>人加入意向房</p>
                     </div>
                     {focusList}
                 </div>
@@ -178,7 +91,7 @@ module.exports = React.createClass({
                     <h3>配套设备</h3>
                     <ul>
                         {
-                            this.state.setting.map(function(item,index){
+                            PublicDate.Details_setting.map(function(item,index){
                                 return  <li key={index}>
                                             <img src={item.img}/>
                                             <span>{item.name}</span>
@@ -193,7 +106,7 @@ module.exports = React.createClass({
                 </div>
                 <div className="detail_moreList">
                     <h3>小区同户型房源</h3>
-                    <ListDetails lists={this.state.moreLists} />
+                    <ListDetails lists={PublicDate.Details_moreLists} />
                 </div>
                 <div className="detail_bottom">
                     <div className="detail_bottom_left">
