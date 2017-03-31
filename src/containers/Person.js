@@ -8,7 +8,7 @@ export class Person extends React.Component {
         return (
             <div className="person">
                 <div className="person_title">
-                    <img src="../src/images/user.png" />
+                    <img src={require('../images/user.png')}/>
                     <p>13845756452</p>
                 </div>
                 <div className="person_info">

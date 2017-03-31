@@ -3,35 +3,35 @@ var PublicDate = {};
 PublicDate.Index_typeLists = [
             {
                 name : '区域找房',
-                src : '../src/images/index_icon1.png',
+                src : require('../images/index_icon1.png'),
                 href : '/areaSearch'
             },{
                 name : '地铁找房',
-                src : '../src/images/index_icon2.png',
+                src : require('../images/index_icon2.png'),
                 href : '/areaSearch'
             },{
                 name : '整租房源',
-                src : '../src/images/index_icon3.png',
+                src : require('../images/index_icon3.png'),
                 href : '/areaSearch'
             },{
                 name : '合租房源',
-                src : '../src/images/index_icon4.png',
+                src : require('../images/index_icon4.png'),
                 href : '/areaSearch'
             },{
                 name : '品牌公寓',
-                src : '../src/images/index_icon5.png',
+                src : require('../images/index_icon5.png'),
                 href : '/areaSearch'
             },{
                 name : '活动专题',
-                src : '../src/images/index_icon6.png',
+                src : require('../images/index_icon6.png'),
                 href : '/activity'
             },{
                 name : '私人订制',
-                src : '../src/images/index_icon7.png',
+                src : require('../images/index_icon7.png'),
                 href : '/areaSearch'
             },{
                 name : '我是房东',
-                src : '../src/images/index_icon8.png',
+                src : require('../images/index_icon8.png'),
                 href : '/areaSearch'
             }
         ];
@@ -58,7 +58,7 @@ PublicDate.listContent_left = [
           className: 'list_color3'
         }],
         address: '距离2号线世纪公园站150米',
-        image: '../src/images/ad1.png'
+        image: require('../images/ad1.png')
       }, {
         name: '香楠小区2居室-西卧',
         location: {
@@ -77,7 +77,7 @@ PublicDate.listContent_left = [
           className: 'list_color3'
         }],
         address: '距离2号线张江高科站200米',
-        image: '../src/images/ad2.png'
+        image: require('../images/ad2.png')
       }, {
         name: '园西一居1居室-东卧',
         location: {
@@ -96,7 +96,7 @@ PublicDate.listContent_left = [
           className: 'list_color3'
         }],
         address: '距离10号线川沙站300米',
-        image: '../src/images/ad3.png'
+        image: require('../images/ad3.png')
       }, {
         name: '御景豪园1居室-南卧',
         location: {
@@ -115,7 +115,7 @@ PublicDate.listContent_left = [
           className: 'list_color2'
         }, ],
         address: '距离2号线川沙站600米',
-        image: '../src/images/ad4.png'
+        image: require('../images/ad4.png')
       }, {
         name: '东方悦居苑1居室-北卧',
         location: {
@@ -134,7 +134,7 @@ PublicDate.listContent_left = [
           className: 'list_color3'
         }],
         address: '距离6号线三林站500米',
-        image: '../src/images/ad5.png'
+        image: require('../images/ad5.png')
       }, ];
 PublicDate.listContent_right = [
     {
@@ -155,7 +155,7 @@ PublicDate.listContent_right = [
         className: 'list_color2'
       }, ],
       address: '距离2号线川沙站600米',
-      image: '../src/images/ad4.png'
+      image: require('../images/ad4.png')
     }, {
       name: '东方悦居苑1居室-北卧',
       location: {
@@ -174,7 +174,7 @@ PublicDate.listContent_right = [
         className: 'list_color3'
       }],
       address: '距离6号线三林站500米',
-      image: '../src/images/ad5.png'
+      image: require('../images/ad5.png')
     }, {
       name: '建华小区3居室-南卧',
       location: {
@@ -196,7 +196,7 @@ PublicDate.listContent_right = [
         className: 'list_color3'
       }],
       address: '距离2号线世纪公园站150米',
-      image: '../src/images/ad1.png'
+      image: require('../images/ad1.png')
     }];
 //yixiangfang
 PublicDate.Yixiangfang_beforeList = [
@@ -223,7 +223,7 @@ PublicDate.Yixiangfang_beforeList = [
           className: 'list_color3'
         }],
         address: '距离2号线张江高科站200米',
-        image: '../src/images/ad4.png',
+        image: require('../images/ad4.png'),
         bottom: ['放弃', '出价']
     }, {
         titleType: '签约方式：',
@@ -242,7 +242,7 @@ PublicDate.Yixiangfang_beforeList = [
           className: 'list_color1'
         }],
         address: '距离10号线川沙站300米',
-        image: '../src/images/ad5.png',
+        image: require('../images/ad5.png'),
         bottom: ['放弃', '出价']
     }];
 PublicDate.Yixiangfang_afterList = [
@@ -266,7 +266,7 @@ PublicDate.Yixiangfang_afterList = [
           className: 'list_color3'
         }],
         address: '距离2号线川沙站600米',
-        image: '../src/images/ad1.png',
+        image: require('../images/ad1.png'),
         bottom: ['联系房东', '生成合同']
     }, {
         titleType: '我的出价：',
@@ -288,7 +288,7 @@ PublicDate.Yixiangfang_afterList = [
           className: 'list_color2'
         }],
         address: '距离6号线三林站500米',
-        image: '../src/images/ad2.png',
+        image: require('../images/ad2.png'),
         bottom: ['联系房东', '生成合同']
     }];
 //Person
@@ -413,19 +413,19 @@ PublicDate.Details_focusList = [
             }],
 PublicDate.Details_setting = [
             {
-                img: '../src/images/index_icon1.png',
+                img: require('../images/index_icon1.png'),
                 name: '床'
             }, {
-                img: '../src/images/index_icon2.png',
+                img: require('../images/index_icon2.png'),
                 name: '衣柜'
             }, {
-                img: '../src/images/index_icon3.png',
+                img: require('../images/index_icon3.png'),
                 name: '电视'
             }, {
-                img: '../src/images/index_icon4.png',
+                img: require('../images/index_icon4.png'),
                 name: '冰箱'
             }, {
-                img: '../src/images/index_icon5.png',
+                img: require('../images/index_icon5.png'),
                 name: '卫生间'
             }],
 PublicDate.Details_moreLists = [
@@ -447,7 +447,7 @@ PublicDate.Details_moreLists = [
                     className: 'list_color2'
                 }, ],
                 address: '距离2号线川沙站600米',
-                image: '../src/images/ad4.png'
+                image: require('../images/ad4.png')
             }, {
                 name: '东方悦居苑1居室-北卧',
                 location: {
@@ -466,7 +466,7 @@ PublicDate.Details_moreLists = [
                     className: 'list_color3'
                 }],
                 address: '距离6号线三林站500米',
-                image: '../src/images/ad5.png'
+                image: require('../images/ad5.png')
             }, {
                 name: '建华小区3居室-南卧',
                 location: {
@@ -488,6 +488,6 @@ PublicDate.Details_moreLists = [
                     className: 'list_color3'
                 }],
                 address: '距离2号线世纪公园站150米',
-                image: '../src/images/ad1.png'
+                image: require('../images/ad1.png')
             }]
 module.exports = PublicDate;

@@ -80,7 +80,7 @@ export class IndexSearch extends React.Component {
            if(this.state.resultArr.length > 0){
                 searchResult = <SearchList lists={this.state.resultArr}/>
            }else{
-                searchResult = <div className="noSearch"><img width="70" src="../src/images/null.png"/><p>没有查到相关的结果</p></div>
+                searchResult = <div className="noSearch"><img width="70" src={require("../images/null.png")}/><p>没有查到相关的结果</p></div>
            }
         }
         return (

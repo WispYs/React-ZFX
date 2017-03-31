@@ -17,7 +17,7 @@ class Banner extends React.Component {
                         <span>搜索</span>
                     </Link>
                 </div>
-                <img className="bannerImg" src="../src/images/banner.png"/>
+                <img className="bannerImg" src={require('../images/banner.png')}/>
             </div>
         )
     }
