@@ -9,6 +9,7 @@ module.exports = {
     entry: __dirname + '/src/entry.js', //唯一入口文件
     output: {
         path: __dirname + '/build', //打包后的文件存放的地方
+        //publicPath: __dirname + '/build/',
         filename: 'bundle.js' //打包后输出文件的文件名
     },
     module: {
@@ -16,7 +17,7 @@ module.exports = {
             { test: /\.js$/, loader: "jsx!babel", include: /src/},
             { test: /\.css$/, loader: ExtractTextPlugin.extract("style", "css!postcss")},
             { test: /\.scss$/, loader: ExtractTextPlugin.extract("style", "css!postcss!sass")},
-            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'}
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'}  
         ]
     },
     postcss: [

@@ -1,4 +1,6 @@
 
+$pubColor: #F05B48;
+$banImg: "../images/userbg.png";
 #app {
     width:100%;
     height:100%;
@@ -31,7 +33,6 @@
         .bannerImg{
             width:100%;
         }
-        
         .typeBox{
             overflow:hidden;
             padding-bottom:10px;
@@ -73,7 +74,7 @@
                 }
             }
             .list_right_btn{
-                color: #FD7A20;
+                color: $pubColor;
                 float:right;
             }
         }
@@ -123,7 +124,7 @@
     .person{
         padding-bottom:55px;
         .person_title{
-            background: url(../images/userbg.png) center no-repeat;
+            background: url($banImg) center no-repeat;
             background-size: cover;
             padding-bottom: 20px;
             min-height: 120px;
@@ -161,7 +162,7 @@
                 }
                 .number{
                     font-size: 30px;
-                    color: #F05B48;
+                    color: $pubColor;
                 }
                 .text{
                     font-size: 12px;
@@ -184,7 +185,7 @@
                 em{
                     float: right;
                     font-style:normal;
-                    color: #F05B48;
+                    color: $pubColor;
                 }
                 i{
                     float:right;
@@ -216,8 +217,8 @@
                 color: #eee;
             }
             .cur{
-                color: #FD7A20;
-                border-bottom: 1px solid #FD7A20;
+                color: $pubColor;
+                border-bottom: 1px solid $pubColor;
             }
         }
     .listDetails{
@@ -237,7 +238,7 @@
             }
             span{
                 float:left;
-                color:#FD7A20;
+                color:$pubColor;
             }
         }
         dl{
@@ -363,7 +364,7 @@
                 span{
                     padding: 1px 6px;
                     border-radius: 2px;
-                    background: #FD7A20;
+                    background: $pubColor;
                     color: #fff;
                     font-size: 12px;
                     margin-left:15px;
@@ -422,7 +423,7 @@
                     color: #555;
                 }
                 em{
-                    color:#FD7A20;
+                    color:$pubColor;
                 }
             }
             .detail_focus_list{
@@ -561,7 +562,7 @@
                     height:100%;
                     line-height:50px;
                     text-align: center;
-                    background: #FD7A20;
+                    background: $pubColor;
                     color: #fff;
                     font-size: 15px;
                 }
@@ -815,10 +816,10 @@
         display:none !important;
     }
     .cur{
-        color:#FD7A20 !important;
+        color:$pubColor !important;
     }
     .cur_bg{
-        background-color:#FD7A20 !important;
+        background-color:$pubColor !important;
         color:white !important;
     }
 }
